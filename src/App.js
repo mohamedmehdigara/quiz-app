@@ -1,25 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {useState} from "react";
+import { quizes } from "./static/quizData";
+import Welcome from "./components/Welcome";
+import QuizContainer from "./components/QuizContainer";
+import Results from "./components/Results";
+import Button from "./components/Button";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+
+function App(){
+const [currentQuiz, setCurrentQuiz] = useState(-1)
+const [selectedAnswers, setSelectedAnswers] = useState([])
+return (
+  <div>
+  <Button/>
+  <QuizContainer/>
+  <Results/>
+  <Welcome/>
+  <quizData/>
+  </div>
   );
-}
-
+};
 export default App;
